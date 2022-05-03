@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>USRPS Championship 2020</title>
+</head>
+<body>
+
+
+
+<table>
+<tr>
+    <th>{{tournament.game.playernameA}} vs {{tournament.game.playernameB}}</th>
+
+</tr>
+    {% for game in games %}
+    <tr>
+        <th>{{game.playernameA}}: {{game.playernameA.move}} at {{game.date}}, {{game.time}} </th>
+        <th>{{game.playernameB}}: {{game.playernameB.move}} at {{game.date}}, {{game.time}} </th>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
