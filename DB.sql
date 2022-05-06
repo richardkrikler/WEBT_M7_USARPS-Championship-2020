@@ -1,24 +1,31 @@
-CREATE DATABASE IF NOT EXISTS USARPS;
-use USARPS;
+DROP DATABASE IF EXISTS USARPS;
+CREATE DATABASE USARPS CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE USARPS;
 
-CREATE TABLE Players (
-    pk_playerID INT primary key,
-    first_name varchar(20),
-    last_name varchar(20)
+
+CREATE TABLE players
+(
+    pk_player_id INT primary key,
+    firstname    varchar(255),
+    lastname     varchar(255)
 );
 
-CREATE TABLE Symbol (
-    pk_symbolID INT primary key,
-    symbol varchar(20)
+CREATE TABLE symbols
+(
+    pk_symbol_id INT primary key,
+    symbol       varchar(20)
 );
 
-CREATE TABLE Rounds (
-                        pk_roundID INT primary key,
-                        player varchar(20),
-                        symbol varchar(20),
-                        datetime datetime,
-                        fk_pk_playerID INT,
-                        FOREIGN KEY (fk_pk_playerID) REFERENCES Players(pk_playerID),
-                        fk_pk_symbolID INT,
-                        FOREIGN KEY (fk_pk_symbolID) REFERENCES Symbol(pk_symbolID)
+CREATE TABLE rounds
+(
+    pk_round_id           INT primary key,
+    datetime              datetime,
+    fk_pk_player_a        INT,
+    fk_pk_player_b        INT,
+    fk_pk_player_a_symbol INT,
+    fk_pk_player_b_symbol INT,
+    FOREIGN KEY (fk_pk_player_a) REFERENCES players (pk_player_id),
+    FOREIGN KEY (fk_pk_player_b) REFERENCES players (pk_player_id),
+    FOREIGN KEY (fk_pk_player_a_symbol) REFERENCES symbols (pk_symbol_id),
+    FOREIGN KEY (fk_pk_player_b_symbol) REFERENCES symbols (pk_symbol_id)
 );
