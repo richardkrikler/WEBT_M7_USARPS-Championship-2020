@@ -9,7 +9,7 @@ class DB
     private static array $connectionParams = [
         'dbname' => 'USARPS',
         'user' => 'root',
-        'password' => 'cisco',
+        'password' => '',
         'host' => '127.0.0.1',
         'driver' => 'pdo_mysql',
     ];
@@ -37,6 +37,13 @@ class DB
             ->innerJoin('r', 'symbols', 'sb', 'r.fk_pk_player_b_symbol = sb.pk_symbol_id')
             ->executeQuery()
             ->fetchAllAssociative();
+    }
+
+    public static function deleteRound($pk_round_id){
+        self::getDB()
+            ->delete('round')
+            ->where('pk_round_id in (:pk)')
+            ->setParameter(':pk', $pk_round_id, Connection::PARAM_INT);
     }
 }
 
