@@ -10,9 +10,12 @@ use Twig\Loader\FilesystemLoader;
 
 $loader = new FilesystemLoader('templates');
 $twig = new Environment($loader);
-$template = $twig->load('main.html');
+$template = $twig->load('add.html');
 echo $template->render(
     [
-        'rounds' => DB::getRounds()
+        'rounds' => DB::getRounds(),
+        'players' => DB::getPlayers(),
+        'symbols' => DB::getSymbols()
     ]
 );
+
