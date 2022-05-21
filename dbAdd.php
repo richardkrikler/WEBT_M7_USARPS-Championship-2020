@@ -2,7 +2,7 @@
 
 namespace IgnisWeb\USARPS;
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 if (isset($_GET['table'])) {
     if ($_GET['table'] === 'player') {

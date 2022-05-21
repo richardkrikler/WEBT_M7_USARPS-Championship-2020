@@ -1,14 +1,21 @@
 {
-    "name": "ignisweb/usarps",
-    "description": "WEBT-7: USARPS Championship",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "IgnisWeb\\USARPS\\": "src/"
-        }
-    },
-    "require": {
-        "twig/twig": "^3.3",
-        "doctrine/dbal": "^3.3"
+  "name": "ignisweb/usarps",
+  "description": "WEBT-7: USARPS Championship",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "IgnisWeb\\USARPS\\": "src/"
     }
+  },
+  "require": {
+    "twig/twig": "^3.3",
+    "doctrine/dbal": "^3.3",
+    "doctrine/orm": "^2.12",
+    "doctrine/annotations": "^1.13",
+    "symfony/yaml": "^5.4",
+    "symfony/cache": "^5.4"
+  },
+  "require-dev": {
+    "doctrine/data-fixtures": "^1.5"
+  }
 }

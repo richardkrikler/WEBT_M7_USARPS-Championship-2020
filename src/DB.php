@@ -5,15 +5,12 @@ namespace IgnisWeb\USARPS;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\ParameterType;
 use Doctrine\DBAL\Query\QueryBuilder;
+use PDO;
 
 class DB
 {
     private static array $connectionParams = [
-        'dbname' => 'USARPS',
-        'user' => 'root',
-        'password' => 'cisco',
-        'host' => '127.0.0.1',
-        'driver' => 'pdo_mysql',
+        'url' => 'sqlite:///db.sqlite'
     ];
 
     public static function getDB(): QueryBuilder

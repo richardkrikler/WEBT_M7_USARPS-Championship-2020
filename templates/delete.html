@@ -59,7 +59,7 @@
                         </div>
                         <div class="modal-footer flex justify-content-center">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="src/delete.php">
+                            <form action="dbDelete.php">
                                 <input name="round" required hidden value="{{round.pk_round_id}}">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="modal-footer flex justify-content-center">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="src/delete.php">
+                            <form action="dbDelete.php">
                                 <input name="player" required hidden value="{{player.pk_player_id}}">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
