@@ -9,15 +9,11 @@ class PlayerDataLoader implements FixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        // TODO: Implement load() method.
-        $player = new Player(1, 'Richard', 'Krikler');
+        $player1 = new Player(1, 'Richard', 'Krikler');
+        $player2 = new Player(2, 'Martin', 'Windhager');
 
-//        VALUES ('Richard', 'Krikler'),
-//       ('Hadi', 'Tlais'),
-//       ('Jakob', 'Mucherl'),
-//       ('Martin', 'Windhager');
-
-        $manager->persist($player);
+        $manager->persist($player1);
+        $manager->persist($player2);
         $manager->flush();
     }
 }
